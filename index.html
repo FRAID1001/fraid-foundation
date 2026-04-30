@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FRAID Down Syndrome Foundation</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; transition: all 0.3s ease; }
-        .lang-switcher { position: fixed; top: 20px; right: 20px; z-index: 1000; background: rgba(255,255,255,0.9); padding: 10px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .lang-btn { border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-weight: bold; margin: 0 5px; transition: 0.3s; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+        .lang-switcher { position: fixed; top: 20px; right: 20px; z-index: 1000; background: white; padding: 10px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 2px solid #22c55e; }
+        .lang-btn { border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-weight: bold; transition: 0.3s; }
         .active-lang { background: #22c55e; color: white; }
         
-        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('1000094523.jpg'); background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center; }
+        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('IMG-20260430-WA0031.jpg'); background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center; }
         .founder-img { width: 220px; height: 220px; border-radius: 50%; border: 6px solid #22c55e; object-fit: cover; margin-bottom: 20px; }
         
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
@@ -26,26 +26,27 @@
         footer { background: #14532d; color: white; text-align: center; padding: 60px 20px; }
         .contact-box a { color: #22c55e; text-decoration: none; font-weight: bold; }
         
-        [lang="sw"] { display: none; } /* Hidden by default */
+        /* Language Control */
+        [lang="sw"] { display: none; }
     </style>
 </head>
 <body>
 
     <div class="lang-switcher">
-        <button class="lang-btn active-lang" onclick="changeLang('en')">English</button>
-        <button class="lang-btn" onclick="changeLang('sw')">Kiswahili</button>
+        <button id="btn-en" class="lang-btn active-lang" onclick="changeLang('en')">English</button>
+        <button id="btn-sw" class="lang-btn" onclick="changeLang('sw')">Kiswahili</button>
     </div>
 
     <header>
-        <img src="1000094523.jpg" alt="Frank Norasco Kayola" class="founder-img">
+        <img src="IMG-20260430-WA0031.jpg" alt="Frank Norasco Kayola" class="founder-img">
         <h1>FRAID Down Syndrome Foundation</h1>
         <h2>Frank Norasco Kayola</h2>
         <p style="font-size: 22px; color: #22c55e;"><strong>Founder & Executive Director</strong></p>
         
-        <div lang="en" class="content-en">
+        <div lang="en">
             <p style="max-width: 800px; margin: 20px auto; font-size: 20px; font-style: italic;">A Non-Profit Organization dedicated to transforming the lives of children with Down Syndrome and their families through compassion, advocacy, education, healthcare support, and community empowerment. We are committed to creating a society where every child is valued, respected, and given equal opportunities to grow, learn, and succeed.</p>
         </div>
-        <div lang="sw" class="content-sw">
+        <div lang="sw">
             <p style="max-width: 800px; margin: 20px auto; font-size: 20px; font-style: italic;">Shirika lisilo la kifaida lililojitolea kubadilisha maisha ya watoto wenye Usonji (Down Syndrome) na familia zao kupitia upendo, utetezi, elimu, msaada wa afya, na uwezeshaji wa jamii. Tumejitolea kuunda jamii ambapo kila mtoto anathaminiwa, anaheshimiwa, na anapewa fursa sawa za kukua, kujifunza, na kufanikiwa.</p>
         </div>
     </header>
@@ -53,8 +54,8 @@
     <div class="container">
         
         <section>
-            <h3 class="lang-en" lang="en">About Us</h3>
-            <h3 class="lang-sw" lang="sw">Kuhusu Sisi</h3>
+            <h3 lang="en">About Us</h3>
+            <h3 lang="sw">Kuhusu Sisi</h3>
             
             <div lang="en">
                 <p>FRAID Down Syndrome Foundation is committed to improving the lives of children with Down Syndrome in Tanzania. We work closely with families, healthcare providers, schools, and communities to ensure every child receives love, dignity, care, and equal opportunity.</p>
@@ -106,10 +107,10 @@
                 <h3 lang="en">Our Impact</h3>
                 <h3 lang="sw">Matokeo Yetu</h3>
                 <ul style="font-size: 18px;">
-                    <li>150+ Children Targeted / Watoto Walengwa</li>
-                    <li>80+ Families Supported / Familia Zilizosaidiwa</li>
-                    <li>5+ Awareness Campaigns / Kampeni za Uelewa</li>
-                    <li>1 Strong Mission / Lengo Moja Thabiti</li>
+                    <li>150+ Children Targeted</li>
+                    <li>80+ Families Supported</li>
+                    <li>5+ Awareness Campaigns</li>
+                    <li>1 Strong Mission</li>
                 </ul>
             </div>
             <div class="card">
@@ -135,28 +136,25 @@
             <h3 lang="sw">Uongozi wa Timu</h3>
             <ul class="team-list">
                 <li><strong>Frank Norasco Kayola:</strong> Founder/Executive Director</li>
-                <li><strong>Dr. Flora Ndullu:</strong> Programme Manager</li>
-                <li><strong>Aida Audax Lwamuhulu:</strong> Finance Manager</li>
-                <li><strong>John Andrew Maembe:</strong> Secretary General</li>
-                <li><strong>Mathias Peje:</strong> Board Member</li>
-                <li><strong>Ngumiji Kazungu:</strong> Board Member</li>
+                <li><strong>Dr.Flora ndullu:</strong> Programme manager</li>
+                <li><strong>Aida Audax Lwamuhulu:</strong> finince manager</li>
+                <li><strong>John Andrew Maembe:</strong> secretary General</li>
+                <li><strong>Mathias Peje:</strong> board member</li>
+                <li><strong>Ngumiji Kazungu:</strong> board member</li>
             </ul>
         </section>
-
     </div>
 
     <footer>
         <div id="contact" class="contact-box">
             <h3 style="color: white; border: none; padding: 0;" lang="en">Contact Us</h3>
             <h3 style="color: white; border: none; padding: 0;" lang="sw">Wasiliana Nasi</h3>
-            
             <p style="font-size: 20px;">
                 WhatsApp: <a href="https://wa.me/255758422663">+255 758 422 663</a> | 
                 Call: <a href="tel:+255787319624">+255 787 319 624</a>
             </p>
             <p style="font-size: 20px;">Email: <a href="mailto:frank.kayola@akhst.org">frank.kayola@akhst.org</a></p>
-            <p style="font-size: 20px;" lang="en">Location: Kahama, Shinyanga, Tanzania</p>
-            <p style="font-size: 20px;" lang="sw">Mahali: Kahama, Shinyanga, Tanzania</p>
+            <p style="font-size: 20px;">Location: Kahama, Shinyanga, Tanzania</p>
         </div>
         <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.2); margin: 30px 0;">
         <p>&copy; 2026 FRAID Down Syndrome Foundation. All Rights Reserved.</p>
@@ -164,22 +162,16 @@
 
     <script>
         function changeLang(lang) {
-            // Hide all language elements
             document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = 'none');
             document.querySelectorAll('[lang="sw"]').forEach(el => el.style.display = 'none');
-            
-            // Show selected language elements
             document.querySelectorAll('[lang="' + lang + '"]').forEach(el => {
-                el.style.display = (el.tagName === 'DIV' || el.tagName === 'SECTION') ? 'block' : 'inline-block';
+                el.style.display = (el.tagName === 'DIV' || el.tagName === 'SECTION' || el.tagName === 'P') ? 'block' : 'inline-block';
                 if(el.tagName === 'H3') el.style.display = 'block';
             });
-
-            // Update buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active-lang'));
-            event.target.classList.add('active-lang');
+            document.getElementById('btn-en').classList.remove('active-lang');
+            document.getElementById('btn-sw').classList.remove('active-lang');
+            document.getElementById('btn-' + lang).classList.add('active-lang');
         }
-
-        // Initialize with English
         changeLang('en');
     </script>
 
