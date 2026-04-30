@@ -1,189 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FRAID DOWNSYNDROME FOUNDATION | Kahama - Tanzania</title>
-    <style>
-        :root {
-            --primary: #003366;
-            --accent: #2e7d32;
-            --gold: #ffc107;
-            --danger: #e53e3e;
-            --white: #ffffff;
-            --soft-bg: #f8fafc;
-        }
-        * { box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0; padding: 0;
-            background-color: var(--soft-bg);
-            color: #334155;
-            line-height: 1.6;
-        }
-        
-        .lang-nav {
-            background: var(--white);
-            padding: 15px;
-            text-align: center;
-            border-bottom: 4px solid var(--primary);
-            position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .lang-btn {
-            background: #e2e8f0;
-            color: var(--primary);
-            border: none;
-            padding: 10px 25px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            margin: 0 5px;
-            transition: 0.3s;
-        }
-        .lang-btn.active { background: var(--primary); color: white; }
-
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        
-        .hero { 
-            background: white; padding: 60px 20px; text-align: center; border-radius: 30px; 
-            margin-top: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
-        .founder-img { 
-            width: 200px; height: 200px; object-fit: cover; border-radius: 50%; 
-            border: 6px solid var(--primary); margin-bottom: 20px;
-        }
-        .hero h1 { font-size: 2.5rem; margin: 10px 0; color: var(--primary); }
-        .org-badge { background: var(--gold); color: var(--primary); padding: 5px 20px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
-
-        .section { background: white; padding: 40px; margin-top: 30px; border-radius: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
-        h2 { color: var(--primary); border-bottom: 3px solid var(--gold); display: inline-block; margin-bottom: 25px; padding-bottom: 5px; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: #f1f5f9; padding: 25px; border-radius: 20px; border-left: 5px solid var(--primary); }
-        
-        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; text-align: center; margin-top: 20px; }
-        .impact-item { background: var(--primary); color: white; padding: 20px; border-radius: 20px; }
-        .impact-item h3 { font-size: 2rem; margin: 0; color: var(--gold); }
-
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
-        .member { background: #f8fafc; padding: 15px; border-radius: 15px; text-align: center; border: 1px solid #e2e8f0; }
-
-        .reality-box { background: #fff5f5; border: 1px solid #feb2b2; padding: 25px; border-radius: 20px; margin-top: 20px; }
-
-        .lang-sw { display: none; }
-        
-        .contact-box { background: var(--primary); color: white; padding: 40px; border-radius: 30px; text-align: center; margin-top: 40px; }
-        .contact-btn { display: inline-block; background: white; color: var(--primary); padding: 12px 25px; border-radius: 15px; text-decoration: none; font-weight: bold; margin: 10px; }
-
-        footer { text-align: center; padding: 40px; color: #94a3b8; }
-    </style>
+    <title>FRAID Down Syndrome Foundation | Kahama</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<div class="lang-nav">
-    <button id="btn-en" class="lang-btn active" onclick="showLang('en')">English</button>
-    <button id="btn-sw" class="lang-btn" onclick="showLang('sw')">Kiswahili</button>
-</div>
-
-<div class="container">
-    
-    <header class="hero">
-        <img src="IMG-20260430-WA0031.jpg" alt="Frank Norasco Kayola" class="founder-img">
-        <div class="org-badge">Non-Profit Organization (NGO)</div>
-        <h1>Frank Norasco Kayola</h1>
-        <p><strong>Founder & Executive Director</strong></p>
-        <p style="max-width: 800px; margin: 0 auto;">
-            <span class="lang-en">Dedicated to transforming lives through compassion, advocacy, and empowerment.</span>
-            <span class="lang-sw">Tumejitolea kubadili maisha kupitia upendo, utetezi, na uwezeshaji.</span>
-        </p>
+    <header>
+        <nav class="navbar">
+            <div class="logo">FRAID <span>Foundation</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Nyumbani</a></li>
+                <li><a href="#about">Kuhusu Sisi</a></li>
+                <li><a href="#programs">Programu</a></li>
+                <li><a href="#team">Uongozi</a></li>
+                <li><a href="#contact">Mawasiliano</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="section">
-        <h2 class="lang-en">About Us</h2>
-        <h2 class="lang-sw">Kuhusu Sisi</h2>
-        <p class="lang-en">FRAID Down Syndrome Foundation is committed to improving the lives of children in Tanzania. We work closely with families, schools, and healthcare providers to ensure every child receives love, dignity, and care.</p>
-        <p class="lang-sw">FRAID Down Syndrome Foundation imejitolea kuboresha maisha ya watoto nchini Tanzania. Tunafanya kazi na familia, shule, na watoa huduma za afya kuhakikisha kila mtoto anapata upendo, heshima, na malezi bora.</p>
-    </div>
-
-    <div class="section" style="border: 2px solid var(--danger);">
-        <h2 class="lang-en">Social Challenge</h2>
-        <h2 class="lang-sw">Changamoto ya Kijamii</h2>
-        <div class="reality-box">
-            <p class="lang-en"><strong>The Issue:</strong> In Kahama, many fathers abandon their families after a Down Syndrome diagnosis. We provide psychological support to keep families together.</p>
-            <p class="lang-sw"><strong>Tatizo:</strong> Kahama, akina baba wengi hutelekeza familia baada ya mtoto kugundulika na Down Syndrome. Tunatoa ushauri wa kisaikolojia kuziweka familia pamoja.</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2 class="lang-en">Vision & Mission</h2>
-        <h2 class="lang-sw">Dira na Dhima</h2>
-        <div class="grid">
-            <div class="card">
-                <strong class="lang-en">Our Mission</strong><strong class="lang-sw">Dhima Yetu</strong>
-                <p class="lang-en">To improve lives through healthcare support, inclusive education, and community awareness.</p>
-                <p class="lang-sw">Kuboresha maisha kupitia huduma za afya, elimu jumuishi, na uelewa wa jamii.</p>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>FRAID Down Syndrome Foundation</h1>
+                <h3>Frank Norasco Kayola</h3>
+                <p class="title">Founder & Executive Director</p>
+                <p class="mission-text">
+                    Shirika lisilo la kifaida linalojitolea kubadilisha maisha ya watoto wenye Down Syndrome kupitia upendo, utetezi, elimu, na uwezeshaji wa jamii.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/255787319624" class="btn btn-primary">Tuchangie / Uliza</a>
+                    <a href="#about" class="btn btn-secondary">Soma Zaidi</a>
+                </div>
             </div>
-            <div class="card">
-                <strong class="lang-en">Our Vision</strong><strong class="lang-sw">Dira Yetu</strong>
-                <p class="lang-en">A compassionate society where every child is valued and given equal opportunities.</p>
-                <p class="lang-sw">Jamii yenye upendo ambapo kila mtoto anathaminiwa na kupewa fursa sawa.</p>
+            <div class="hero-image">
+                <img src="1000094525.jpg" alt="Frank Norasco Kayola">
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="section">
-        <h2 class="lang-en">Our Impact</h2>
-        <h2 class="lang-sw">Matokeo Yetu</h2>
-        <div class="impact-grid">
-            <div class="impact-item"><h3>150+</h3><p>Children Targeted</p></div>
-            <div class="impact-item"><h3>80+</h3><p>Families Supported</p></div>
-            <div class="impact-item"><h3>5+</h3><p>Campaigns</p></div>
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kuhusu Sisi</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-grid">
+                <div class="card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Mission Yetu</h3>
+                    <p>Kuboresha maisha ya watoto wenye Down Syndrome kupitia huduma za afya, elimu jumuishi, na kupambana na unyanyapaa.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Vision Yetu</h3>
+                    <p>Kujenga jamii yenye usawa ambapo kila mtoto mwenye Down Syndrome anathaminiwa na kuheshimiwa bila ubaguzi.</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="section">
-        <h2 class="lang-en">Management Team</h2>
-        <h2 class="lang-sw">Timu ya Uongozi</h2>
-        <div class="team-grid">
-            <div class="member"><strong>Frank Norasco Kayola</strong><br><small>Executive Director</small></div>
-            <div class="member"><strong>Dr. Flora Ndullu</strong><br><small>Manager</small></div>
-            <div class="member"><strong>Aida Audax Lwamuhulu</strong><br><small>Finance</small></div>
-            <div class="member"><strong>John Andrew Maembe</strong><br><small>Secretary</small></div>
-            <div class="member"><strong>Mathias Peje</strong><br><small>Field Officer</small></div>
-            <div class="member"><strong>Ngumiji Kazungu</strong><br><small>Community Liaison</small></div>
+    <section class="impact">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h2>150+</h2>
+                <p>Watoto Walengwa</p>
+            </div>
+            <div class="stat-item">
+                <h2>80+</h2>
+                <p>Familia Zinazosaidiwa</p>
+            </div>
+            <div class="stat-item">
+                <h2>5+</h2>
+                <p>Kampeni za Uelewa</p>
+            </div>
+            <div class="stat-item">
+                <h2>1</h2>
+                <p>Mission Imara</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="contact-box">
-        <h2 style="color:white; border:none;">Contact Us</h2>
-        <p>Location: Kahama, Tanzania</p>
-        <p>Phone: +255758422663 / +255787319624</p>
-        <a href="mailto:frank.kayola@akhst.org" class="contact-btn">Email Us</a>
-    </div>
+    <section id="programs" class="programs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Programu Zetu</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="program-grid">
+                <div class="p-item">Afya & Tiba</div>
+                <div class="p-item">Mafunzo ya Wazazi</div>
+                <div class="p-item">Elimu Jumuishi</div>
+                <div class="p-item">Uhamasishaji wa Jamii</div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 FRAID Down Syndrome Foundation</p>
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Uongozi Wetu (Team Management)</h2>
+                <div class="underline"></div>
+            </div>
+            <table>
+                <tr>
+                    <th>Jina</th>
+                    <th>Nafasi</th>
+                </tr>
+                <tr><td>Frank Norasco Kayola</td><td>Founder/Executive</td></tr>
+                <tr><td>Dr. Flora Ndullu</td><td>Programme Manager</td></tr>
+                <tr><td>Aida Audax Lwamuhulu</td><td>Finance Manager</td></tr>
+                <tr><td>John Andrew Maembe</td><td>Secretary General</td></tr>
+                <tr><td>Mathias Peje</td><td>Board Member</td></tr>
+                <tr><td>Ngumiji Kazungu</td><td>Board Member</td></tr>
+            </table>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Wasiliana Nasi</h2>
+            <p><i class="fas fa-phone"></i> +255 758 422 663 | <i class="fab fa-whatsapp"></i> +255 787 319 624</p>
+            <p><i class="fas fa-envelope"></i> frank.kayola@akhst.org</p>
+            <p><i class="fas fa-map-marker-alt"></i> Kahama, Tanzania</p>
+            <hr>
+            <p>&copy; 2026 FRAID Down Syndrome Foundation. Haki zote zimehifadhiwa.</p>
+        </div>
     </footer>
 
-</div>
-
-<script>
-    function showLang(lang) {
-        const en = document.querySelectorAll('.lang-en');
-        const sw = document.querySelectorAll('.lang-sw');
-        const bEn = document.getElementById('btn-en');
-        const bSw = document.getElementById('btn-sw');
-        if(lang === 'sw') {
-            en.forEach(e => e.style.display = 'none');
-            sw.forEach(e => e.style.display = 'block');
-            bSw.classList.add('active'); bEn.classList.remove('active');
-        } else {
-            en.forEach(e => e.style.display = 'block');
-            sw.forEach(e => e.style.display = 'none');
-            bEn.classList.add('active'); bSw.classList.remove('active');
-        }
-    }
-</script>
 </body>
 </html>
