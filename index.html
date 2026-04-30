@@ -1,90 +1,138 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FRAID Down Syndrome Foundation</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
-        .container { max-width: 1100px; margin: auto; padding: 20px; }
-        header { background: #14532d; color: white; padding: 60px 20px; text-align: center; }
-        .founder-img { width: 250px; height: 250px; border-radius: 50%; border: 5px solid white; object-fit: cover; margin-bottom: 20px; }
-        h1 { margin: 10px 0; font-size: 36px; }
-        h2 { color: #22c55e; margin-bottom: 5px; }
-        .intro-text { font-size: 18px; max-width: 800px; margin: 20px auto; font-style: italic; }
-        section { padding: 40px 0; border-bottom: 1px solid #eee; }
-        h3 { color: #14532d; font-size: 28px; border-left: 5px solid #22c55e; padding-left: 15px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
-        .card { background: #f9fafb; padding: 20px; border-radius: 8px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; transition: all 0.3s ease; }
+        .lang-switcher { position: fixed; top: 20px; right: 20px; z-index: 1000; background: rgba(255,255,255,0.9); padding: 10px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .lang-btn { border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-weight: bold; margin: 0 5px; transition: 0.3s; }
+        .active-lang { background: #22c55e; color: white; }
+        
+        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('1000094523.jpg'); background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center; }
+        .founder-img { width: 220px; height: 220px; border-radius: 50%; border: 6px solid #22c55e; object-fit: cover; margin-bottom: 20px; }
+        
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+        h1 { font-size: clamp(28px, 5vw, 48px); margin: 10px 0; }
+        h3 { color: #14532d; border-left: 6px solid #22c55e; padding-left: 15px; margin-top: 40px; font-size: 28px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 20px; }
+        .card { background: #f9fafb; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        
         .team-list { list-style: none; padding: 0; }
-        .team-list li { padding: 10px 0; border-bottom: 1px dashed #ccc; }
-        footer { background: #14532d; color: white; text-align: center; padding: 40px 20px; margin-top: 40px; }
-        .contact-info a { color: #22c55e; text-decoration: none; font-weight: bold; }
+        .team-list li { padding: 12px 0; border-bottom: 1px solid #eee; font-size: 18px; }
+        
+        footer { background: #14532d; color: white; text-align: center; padding: 60px 20px; }
+        .contact-box a { color: #22c55e; text-decoration: none; font-weight: bold; }
+        
+        [lang="sw"] { display: none; } /* Hidden by default */
     </style>
 </head>
 <body>
 
+    <div class="lang-switcher">
+        <button class="lang-btn active-lang" onclick="changeLang('en')">English</button>
+        <button class="lang-btn" onclick="changeLang('sw')">Kiswahili</button>
+    </div>
+
     <header>
-        <img src="1000094525.jpg" alt="Frank Norasco Kayola" class="founder-img">
-        
+        <img src="1000094523.jpg" alt="Frank Norasco Kayola" class="founder-img">
         <h1>FRAID Down Syndrome Foundation</h1>
         <h2>Frank Norasco Kayola</h2>
-        <p><strong>Founder & Executive Director</strong></p>
+        <p style="font-size: 22px; color: #22c55e;"><strong>Founder & Executive Director</strong></p>
         
-        <p class="intro-text">
-            A Non-Profit Organization dedicated to transforming the lives of children with Down Syndrome and their families through compassion, advocacy, education, healthcare support, and community empowerment. We are committed to creating a society where every child is valued, respected, and given equal opportunities to grow, learn, and succeed.
-        </p>
+        <div lang="en" class="content-en">
+            <p style="max-width: 800px; margin: 20px auto; font-size: 20px; font-style: italic;">A Non-Profit Organization dedicated to transforming the lives of children with Down Syndrome and their families through compassion, advocacy, education, healthcare support, and community empowerment. We are committed to creating a society where every child is valued, respected, and given equal opportunities to grow, learn, and succeed.</p>
+        </div>
+        <div lang="sw" class="content-sw">
+            <p style="max-width: 800px; margin: 20px auto; font-size: 20px; font-style: italic;">Shirika lisilo la kifaida lililojitolea kubadilisha maisha ya watoto wenye Usonji (Down Syndrome) na familia zao kupitia upendo, utetezi, elimu, msaada wa afya, na uwezeshaji wa jamii. Tumejitolea kuunda jamii ambapo kila mtoto anathaminiwa, anaheshimiwa, na anapewa fursa sawa za kukua, kujifunza, na kufanikiwa.</p>
+        </div>
     </header>
 
     <div class="container">
         
         <section>
-            <h3>About Us</h3>
-            <p>FRAID Down Syndrome Foundation is committed to improving the lives of children with Down Syndrome in Tanzania. We work closely with families, healthcare providers, schools, and communities to ensure every child receives love, dignity, care, and equal opportunity.</p>
-            <p>We believe that every child deserves the chance to grow, learn, and reach their full potential regardless of their condition.</p>
+            <h3 class="lang-en" lang="en">About Us</h3>
+            <h3 class="lang-sw" lang="sw">Kuhusu Sisi</h3>
+            
+            <div lang="en">
+                <p>FRAID Down Syndrome Foundation is committed to improving the lives of children with Down Syndrome in Tanzania. We work closely with families, healthcare providers, schools, and communities to ensure every child receives love, dignity, care, and equal opportunity.</p>
+                <p>We believe that every child deserves the chance to grow, learn, and reach their full potential regardless of their condition.</p>
+            </div>
+            <div lang="sw">
+                <p>FRAID Down Syndrome Foundation imejitolea kuboresha maisha ya watoto wenye Down Syndrome nchini Tanzania. Tunafanya kazi kwa karibu na familia, watoa huduma za afya, shule, na jamii ili kuhakikisha kila mtoto anapata upendo, hadhi, matunzo, na fursa sawa.</p>
+                <p>Tunaamini kwamba kila mtoto anastahili nafasi ya kukua, kujifunza, na kufikia uwezo wake kamili bila kujali hali yake.</p>
+            </div>
         </section>
 
         <div class="grid">
             <div class="card">
-                <h3>Our Mission</h3>
-                <p>To improve the lives of children with Down Syndrome and their families through healthcare support, inclusive education, advocacy, family empowerment, and community awareness. We are committed to promoting dignity, equality, acceptance, and equal opportunities so that every child can grow and succeed.</p>
+                <h3 lang="en">Our Mission</h3>
+                <h3 lang="sw">Lengo Letu (Mission)</h3>
+                <p lang="en">To improve the lives of children with Down Syndrome and their families through healthcare support, inclusive education, advocacy, family empowerment, and community awareness. We are committed to promoting dignity, equality, acceptance, and equal opportunities so that every child can grow and succeed.</p>
+                <p lang="sw">Kuboresha maisha ya watoto wenye Down Syndrome na familia zao kupitia msaada wa afya, elimu jumuishi, utetezi, uwezeshaji wa familia, na uelewa wa jamii. Tumejitolea kukuza hadhi, usawa, kukubalika, na fursa sawa ili kila mtoto akue na kufanikiwa.</p>
             </div>
             <div class="card">
-                <h3>Our Vision</h3>
-                <p>To build a compassionate and inclusive society where every child with Down Syndrome is valued, respected, supported, and given the opportunity to live a healthy, meaningful, and successful life without discrimination.</p>
+                <h3 lang="en">Our Vision</h3>
+                <h3 lang="sw">Maono Yetu (Vision)</h3>
+                <p lang="en">To build a compassionate and inclusive society where every child with Down Syndrome is valued, respected, supported, and given the opportunity to live a healthy, meaningful, and successful life without discrimination.</p>
+                <p lang="sw">Kujenga jamii yenye upendo na jumuishi ambapo kila mtoto mwenye Down Syndrome anathaminiwa, anaheshimiwa, anasaidiwa, na anapewa nafasi ya kuishi maisha ya afya, yenye maana, na yenye mafanikio bila ubaguzi.</p>
             </div>
         </div>
 
         <section>
-            <h3>How We Work</h3>
-            <p>At FRAID Down Syndrome Foundation, we identify children and families in need through community outreach, referrals, and direct engagement. We listen to their challenges and provide practical support with compassion and respect.</p>
-            <p>We help families access healthcare services, therapy, medicines, transport assistance, and early intervention programs. We also promote inclusive education by encouraging school enrollment and equal learning opportunities.</p>
-            <p>Through awareness campaigns, seminars, and community outreach, we fight stigma and misinformation while promoting acceptance and understanding.</p>
-            <p>We empower parents and caregivers through training, counseling, and emotional support so they can confidently care for their children.</p>
-            <p>We also welcome partnerships with donors, volunteers, educators, and healthcare professionals who wish to make a lasting impact.</p>
+            <h3 lang="en">How We Work</h3>
+            <h3 lang="sw">Jinsi Tunavyofanya Kazi</h3>
+            
+            <div lang="en">
+                <p>At FRAID Down Syndrome Foundation, we identify children and families in need through community outreach, referrals, and direct engagement. We listen to their challenges and provide practical support with compassion and respect.</p>
+                <p>We help families access healthcare services, therapy, medicines, transport assistance, and early intervention programs. We also promote inclusive education by encouraging school enrollment and equal learning opportunities.</p>
+                <p>Through awareness campaigns, seminars, and community outreach, we fight stigma and misinformation while promoting acceptance and understanding.</p>
+                <p>We empower parents and caregivers through training, counseling, and emotional support so they can confidently care for their children.</p>
+                <p>We also welcome partnerships with donors, volunteers, educators, and healthcare professionals who wish to make a lasting impact.</p>
+            </div>
+            <div lang="sw">
+                <p>Katika FRAID Down Syndrome Foundation, tunawatambua watoto na familia zenye mahitaji kupitia uhamasishaji wa jamii, marejeo, na ushirikiano wa moja kwa moja. Tunahikiliza changamoto zao na kutoa msaada wa vitendo kwa upendo na heshima.</p>
+                <p>Tunasaidia familia kupata huduma za afya, tiba, dawa, msaada wa usafiri, na programu za kuingilia kati mapema. Pia tunahimiza elimu jumuishi kwa kuhimiza uandikishaji shule na fursa sawa za kujifunza.</p>
+                <p>Kupitia kampeni za uelewa, semina, na uhamasishaji wa jamii, tunapambana na unyanyapaa na taarifa potofu huku tukikuza kukubalika na uelewa.</p>
+                <p>Tunawawezesha wazazi na walezi kupitia mafunzo, ushauri, na msaada wa kihisia ili waweze kuwatunza watoto wao kwa ujasiri.</p>
+                <p>Pia tunakaribisha ushirikiano na wafadhili, watu wa kujitolea, waelimishaji, na wataalamu wa afya wanaotaka kuleta mabadiliko ya kudumu.</p>
+            </div>
         </section>
 
         <div class="grid">
             <div class="card">
-                <h3>Our Impact</h3>
-                <ul>
-                    <li>150+ Children Targeted</li>
-                    <li>80+ Families Supported</li>
-                    <li>5+ Awareness Campaigns</li>
-                    <li>1 Strong Mission</li>
+                <h3 lang="en">Our Impact</h3>
+                <h3 lang="sw">Matokeo Yetu</h3>
+                <ul style="font-size: 18px;">
+                    <li>150+ Children Targeted / Watoto Walengwa</li>
+                    <li>80+ Families Supported / Familia Zilizosaidiwa</li>
+                    <li>5+ Awareness Campaigns / Kampeni za Uelewa</li>
+                    <li>1 Strong Mission / Lengo Moja Thabiti</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Our Programs</h3>
-                <p><strong>Healthcare Support:</strong> Providing medical referrals, therapy guidance, medicines support, and transport assistance.</p>
-                <p><strong>Parent Training:</strong> Helping parents understand how to care for and support children with Down Syndrome.</p>
-                <p><strong>Education Inclusion:</strong> Promoting access to schools and equal learning opportunities.</p>
-                <p><strong>Community Awareness:</strong> Reducing stigma through education campaigns, seminars, and outreach.</p>
+                <h3 lang="en">Our Programs</h3>
+                <h3 lang="sw">Programu Zetu</h3>
+                <div lang="en">
+                    <p><strong>Healthcare Support:</strong> Providing medical referrals, therapy guidance, medicines support, and transport assistance.</p>
+                    <p><strong>Parent Training:</strong> Helping parents understand how to care for and support children with Down Syndrome.</p>
+                    <p><strong>Education Inclusion:</strong> Promoting access to schools and equal learning opportunities.</p>
+                    <p><strong>Community Awareness:</strong> Reducing stigma through education campaigns, seminars, and outreach.</p>
+                </div>
+                <div lang="sw">
+                    <p><strong>Msaada wa Afya:</strong> Kutoa marejeo ya matibabu, mwongozo wa tiba, msaada wa dawa, na usafiri.</p>
+                    <p><strong>Mafunzo ya Wazazi:</strong> Kusaidia wazazi kuelewa jinsi ya kutunza na kusaidia watoto wenye Down Syndrome.</p>
+                    <p><strong>Elimu Jumuishi:</strong> Kuhimiza upatikanaji wa shule na fursa sawa za kujifunza.</p>
+                    <p><strong>Uelewa wa Jamii:</strong> Kupunguza unyanyapaa kupitia kampeni za elimu, semina, na uhamasishaji.</p>
+                </div>
             </div>
         </div>
 
         <section>
-            <h3>Team Management</h3>
+            <h3 lang="en">Team Management</h3>
+            <h3 lang="sw">Uongozi wa Timu</h3>
             <ul class="team-list">
                 <li><strong>Frank Norasco Kayola:</strong> Founder/Executive Director</li>
                 <li><strong>Dr. Flora Ndullu:</strong> Programme Manager</li>
@@ -98,15 +146,42 @@
     </div>
 
     <footer>
-        <div id="contact" class="contact-info">
-            <h3>Contact Us</h3>
-            <p>WhatsApp: <a href="https://wa.me/255758422663">+255 758 422 663</a> | Call: <a href="tel:+255787319624">+255 787 319 624</a></p>
-            <p>Email: <a href="mailto:frank.kayola@akhst.org">frank.kayola@akhst.org</a></p>
-            <p>Location: Kahama, Shinyanga, Tanzania</p>
+        <div id="contact" class="contact-box">
+            <h3 style="color: white; border: none; padding: 0;" lang="en">Contact Us</h3>
+            <h3 style="color: white; border: none; padding: 0;" lang="sw">Wasiliana Nasi</h3>
+            
+            <p style="font-size: 20px;">
+                WhatsApp: <a href="https://wa.me/255758422663">+255 758 422 663</a> | 
+                Call: <a href="tel:+255787319624">+255 787 319 624</a>
+            </p>
+            <p style="font-size: 20px;">Email: <a href="mailto:frank.kayola@akhst.org">frank.kayola@akhst.org</a></p>
+            <p style="font-size: 20px;" lang="en">Location: Kahama, Shinyanga, Tanzania</p>
+            <p style="font-size: 20px;" lang="sw">Mahali: Kahama, Shinyanga, Tanzania</p>
         </div>
-        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.2); margin: 30px 0;">
         <p>&copy; 2026 FRAID Down Syndrome Foundation. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function changeLang(lang) {
+            // Hide all language elements
+            document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('[lang="sw"]').forEach(el => el.style.display = 'none');
+            
+            // Show selected language elements
+            document.querySelectorAll('[lang="' + lang + '"]').forEach(el => {
+                el.style.display = (el.tagName === 'DIV' || el.tagName === 'SECTION') ? 'block' : 'inline-block';
+                if(el.tagName === 'H3') el.style.display = 'block';
+            });
+
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active-lang'));
+            event.target.classList.add('active-lang');
+        }
+
+        // Initialize with English
+        changeLang('en');
+    </script>
 
 </body>
 </html>
