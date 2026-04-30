@@ -3,90 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FRAID DOWNSYNDROME FOUNDATION | Kahama, Tanzania</title>
+    <title>FRAID DOWNSYNDROME FOUNDATION | Kahama - Tanzania</title>
     <style>
         :root {
-            --primary: #004a99;
-            --accent: #28a745;
-            --secondary: #ffc107;
+            --primary: #003366;
+            --accent: #2e7d32;
+            --gold: #ffc107;
             --white: #ffffff;
-            --text-main: #1a202c;
-            --bg-gray: #f1f5f9;
+            --soft-bg: #f8fafc;
         }
         * { box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0; padding: 0;
-            background-color: var(--bg-gray);
-            color: var(--text-main);
+            background-color: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.7;
         }
         
         /* Language Nav */
         .lang-nav {
             background: var(--white);
-            padding: 12px;
+            padding: 15px;
             text-align: center;
-            border-bottom: 2px solid #ddd;
+            border-bottom: 4px solid var(--primary);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .lang-btn {
-            background: #e2e8f0;
-            color: var(--text-main);
+            background: #cbd5e1;
+            color: var(--primary);
             border: none;
-            padding: 10px 25px;
+            padding: 12px 28px;
             border-radius: 50px;
             cursor: pointer;
-            font-weight: bold;
-            margin: 0 5px;
-            transition: 0.3s;
+            font-weight: 800;
+            margin: 0 10px;
+            transition: 0.4s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
-        .lang-btn.active {
-            background: var(--primary);
-            color: white;
-        }
+        .lang-btn.active { background: var(--primary); color: white; }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 25px; }
         
         /* Hero Section */
-        .hero { background: white; padding: 50px 20px; text-align: center; border-radius: 25px; margin-top: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .founder-img { width: 190px; height: 190px; object-fit: cover; border-radius: 25px; border: 5px solid var(--primary); margin-bottom: 15px; }
-        .hero h1 { font-size: 2.2rem; margin: 5px 0; color: var(--primary); }
-        .hero .title { font-weight: bold; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; font-size: 1.1rem; }
-        .location-tag { color: #718096; font-size: 0.9rem; margin-top: 5px; display: block; font-weight: bold; }
+        .hero { 
+            background: white; 
+            padding: 70px 30px; 
+            text-align: center; 
+            border-radius: 40px; 
+            margin-top: 20px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-top: 10px solid var(--gold);
+        }
+        .founder-img { 
+            width: 220px; height: 220px; 
+            object-fit: cover; 
+            border-radius: 40px; 
+            border: 8px solid var(--primary); 
+            margin-bottom: 25px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .hero h1 { font-size: 2.8rem; margin: 10px 0; color: var(--primary); letter-spacing: -1px; }
+        .hero .title { font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 1.3rem; display: block; }
+        .loc-box { color: #64748b; font-weight: 600; margin-top: 15px; font-size: 1.1rem; }
 
-        .section { background: white; padding: 35px; margin-top: 25px; border-radius: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 25px; font-size: 1.5rem; text-transform: uppercase; }
+        .section { background: white; padding: 50px 40px; margin-top: 40px; border-radius: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        h2 { color: var(--primary); border-left: 8px solid var(--gold); padding-left: 20px; margin-bottom: 35px; font-size: 2rem; text-transform: uppercase; letter-spacing: 1px; }
         
-        /* Values Grid */
-        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
-        .value-card { background: #f8fafc; padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #e2e8f0; }
-        .value-card strong { color: var(--primary); display: block; margin-bottom: 5px; }
+        .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: #fdfdfd; padding: 30px; border-radius: 25px; border: 1px solid #edf2f7; position: relative; }
+        .card strong { color: var(--primary); display: block; font-size: 1.3rem; margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
 
-        /* Team Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-        .card { background: var(--bg-gray); padding: 15px; border-radius: 15px; text-align: center; }
-        .role { color: var(--accent); font-weight: bold; display: block; font-size: 0.85rem; text-transform: uppercase; }
+        /* The Pillars List */
+        .pillar { margin-bottom: 25px; }
+        .pillar h3 { color: var(--accent); margin-bottom: 10px; font-size: 1.4rem; }
 
-        .goals-list { list-style: none; padding: 0; }
-        .goals-list li { margin-bottom: 15px; padding-left: 30px; position: relative; }
-        .goals-list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center; margin-top: 30px; }
+        .stat-item { background: var(--primary); color: white; padding: 25px; border-radius: 20px; }
+        .stat-num { font-size: 2rem; font-weight: 800; display: block; color: var(--gold); }
 
-        /* Partner/Contact Box */
-        .partner-box { background: linear-gradient(135deg, #004a99 0%, #002d5f 100%); color: white; padding: 45px 30px; border-radius: 25px; text-align: center; margin-top: 30px; }
-        .contact-item { display: block; background: var(--white); color: var(--primary); padding: 18px; margin: 12px 0; text-decoration: none; border-radius: 15px; font-weight: bold; text-align: center; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 20px; }
+        .team-member { background: #f1f5f9; padding: 25px; border-radius: 20px; text-align: center; }
+        .team-member strong { color: var(--primary); display: block; font-size: 1.1rem; }
+        .team-role { color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-top: 5px; display: block; }
+
+        .cta-box { 
+            background: linear-gradient(135deg, #003366 0%, #001a33 100%); 
+            color: white; 
+            padding: 70px 40px; 
+            border-radius: 40px; 
+            text-align: center; 
+            margin-top: 50px;
+            box-shadow: 0 20px 40px rgba(0,51,102,0.3);
+        }
+        .contact-btn { 
+            display: inline-block; 
+            background: var(--white); 
+            color: var(--primary); 
+            padding: 20px 40px; 
+            margin: 15px; 
+            text-decoration: none; 
+            border-radius: 20px; 
+            font-weight: 800; 
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+        .contact-btn:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
         .lang-sw { display: none; }
-        footer { text-align: center; padding: 50px 20px; color: #718096; font-size: 0.9rem; border-top: 1px solid #ddd; margin-top: 30px; }
+        footer { text-align: center; padding: 80px 20px; color: #64748b; font-size: 1rem; line-height: 2; }
     </style>
 </head>
 <body>
 
 <div class="lang-nav">
-    <button id="btn-en" class="lang-btn active" onclick="showLang('en')">English</button>
-    <button id="btn-sw" class="lang-btn" onclick="showLang('sw')">Kiswahili</button>
+    <button id="btn-en" class="lang-btn active" onclick="showLang('en')">English Version</button>
+    <button id="btn-sw" class="lang-btn" onclick="showLang('sw')">Tafsiri ya Kiswahili</button>
 </div>
 
 <div class="container">
@@ -95,113 +131,83 @@
         <img src="IMG-20260430-WA0031.jpg" alt="Frank Norasco Kayola" class="founder-img">
         <h1>Frank Norasco Kayola</h1>
         <div class="title">
-            <span class="lang-en">Founder & President</span>
-            <span class="lang-sw">Mwanzilishi na Rais</span>
+            <span class="lang-en">Executive President & Founder</span>
+            <span class="lang-sw">Rais Mtendaji na Mwanzilishi</span>
         </div>
-        <span class="location-tag">Kahama, Shinyanga, Tanzania</span>
-        <p style="margin-top: 15px; font-style: italic; color: #4a5568;">
-            <span class="lang-en">"Advocating for a world where every child with Down Syndrome is seen for their potential, not their condition."</span>
-            <span class="lang-sw">"Tunapigania dunia ambapo kila mtoto mwenye Down Syndrome anaonekana kwa uwezo wake, si kwa hali yake."</span>
+        <div class="loc-box">Kahama District | Shinyanga Region | Tanzania</div>
+        <p style="margin-top: 30px; font-size: 1.3rem; font-style: italic; color: #475569; max-width: 800px; margin: 30px auto 0 auto;">
+            <span class="lang-en">"Our commitment is to ensure that every individual with Down Syndrome has a seat at the table of opportunity."</span>
+            <span class="lang-sw">"Dhamira yetu ni kuhakikisha kila mwanadamu mwenye Down Syndrome anapata nafasi kwenye meza ya fursa na maendeleo."</span>
         </p>
     </header>
 
     <div class="section">
-        <h2 class="lang-en">Who We Are</h2>
-        <h2 class="lang-sw">Sisi ni Nani</h2>
-        <p class="lang-en">FRAID DOWNSYNDROME FOUNDATION is a non-governmental organization based in <strong>Kahama District, Shinyanga Region, Tanzania</strong>. We were established to bridge the gap between children with Down Syndrome and the support they deserve. We believe in ability, not disability.</p>
-        <p class="lang-sw">FRAID DOWNSYNDROME FOUNDATION ni shirika lisilo la kiserikali lenye makao makuu <strong>Wilaya ya Kahama, Mkoa wa Shinyanga, Tanzania</strong>. Tulianzishwa ili kuziba pengo kati ya watoto wenye Down Syndrome na msaada wanaostahili. Tunaamini katika uwezo, si ulemavu.</p>
-    </div>
-
-    <div class="section">
-        <h2 class="lang-en">Our Core Values</h2>
-        <h2 class="lang-sw">Maadili Yetu</h2>
-        <div class="values-grid">
-            <div class="value-card">
-                <strong>Integrity</strong>
-                <span class="lang-en">Transparent in every action</span>
-                <span class="lang-sw">Uwazi katika kila jambo</span>
+        <h2 class="lang-en">The Context: Why We Serve</h2>
+        <h2 class="lang-sw">Muktadha: Kwanini Tunahudumu</h2>
+        <div class="content-grid">
+            <div class="card">
+                <span class="lang-en">In many parts of rural Tanzania, including <strong>Kahama</strong>, children with Down Syndrome are often hidden or denied education due to deep-seated cultural myths. We exist to replace fear with facts and neglect with love.</span>
+                <span class="lang-sw">Katika maeneo mengi ya vijijini Tanzania, ikiwemo <strong>Kahama</strong>, watoto wenye Down Syndrome mara nyingi hufichwa au kunyimwa elimu kutokana na imani potofu. Tupo hapa kubadili hofu kuwa ukweli na kutelekezwa kuwa upendo.</span>
             </div>
-            <div class="value-card">
-                <strong>Compassion</strong>
-                <span class="lang-en">Love for all children</span>
-                <span class="lang-sw">Upendo kwa watoto wote</span>
-            </div>
-            <div class="value-card">
-                <strong>Equality</strong>
-                <span class="lang-en">Rights for every person</span>
-                <span class="lang-sw">Haki sawa kwa kila mtu</span>
+            <div class="card">
+                <span class="lang-en">Healthcare for genetic conditions is a luxury for many families. FRAID Foundation bridges this gap by coordinating medical expertise and therapeutic resources directly to the community.</span>
+                <span class="lang-sw">Huduma za afya kwa matatizo ya vinasaba ni ghali kwa familia nyingi. FRAID Foundation inaziba pengo hili kwa kuratibu wataalamu wa afya na vifaa vya tiba moja kwa moja kwenye jamii.</span>
             </div>
         </div>
     </div>
 
     <div class="section">
-        <h2 class="lang-en">2026 Strategic Goals</h2>
-        <h2 class="lang-sw">Mipango ya 2026</h2>
-        <ul class="goals-list">
-            <li class="lang-en"><strong>Medical Database:</strong> Registering 50+ children in Kahama to coordinate therapy.</li>
-            <li class="lang-sw"><strong>Kumbukumbu za Tiba:</strong> Kusajili watoto 50+ ndani ya Kahama kwa ajili ya tiba.</li>
-            
-            <li class="lang-en"><strong>Inclusive Education:</strong> Working with 5 local schools for better learning environments.</li>
-            <li class="lang-sw"><strong>Elimu Jumuishi:</strong> Kushirikiana na shule 5 za Kahama kwa mazingira bora ya elimu.</li>
-            
-            <li class="lang-en"><strong>Public Awareness:</strong> Reaching 10,000+ people via radio and community meetings.</li>
-            <li class="lang-sw"><strong>Uelewa wa Jamii:</strong> Kufikia watu 10,000+ kupitia redio na mikutano ya hadhara.</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2 class="lang-en">Leadership & Governance</h2>
-        <h2 class="lang-sw">Uongozi na Utawala</h2>
-        <div class="grid">
-            <div class="card"><strong>Frank Norasco Kayola</strong><span class="role">Founder & President</span></div>
-            <div class="card"><strong>Dr. Flora Ndullu</strong><span class="role">Programme Manager</span></div>
-            <div class="card"><strong>Aida Audax Lwamuhulu</strong><span class="role">Finance Manager</span></div>
-            <div class="card"><strong>John Andrew Maembe</strong><span class="role">Secretary General</span></div>
-        </div>
-        <p style="text-align:center; margin-top:20px; color:#718096; font-size: 0.9rem;">
-            <span class="lang-en"><strong>Field Volunteers:</strong> Mathias Peje & Ngumiji Kazungu</span>
-            <span class="lang-sw"><strong>Wanaojitolea Nyanjani:</strong> Mathias Peje & Ngumiji Kazungu</span>
-        </p>
-    </div>
-
-    <div class="partner-box">
-        <h2 style="color: white; border: none;" class="lang-en">Global Collaboration</h2>
-        <h2 style="color: white; border: none;" class="lang-sw">Ushirikiano wa Kimataifa</h2>
-        <p class="lang-en">We welcome international donors, research partners, and volunteers to Kahama.</p>
-        <p class="lang-sw">Tunakaribisha wafadhili, washirika wa utafiti, na wanaojitolea kuja Kahama.</p>
+        <h2 class="lang-en">Our Strategic Pillars</h2>
+        <h2 class="lang-sw">Nguzo Zetu za Kimkakati</h2>
         
-        <div style="margin-top: 30px;">
-            <a href="mailto:frank.kayola@akhst.org" class="contact-item">Email: frank.kayola@akhst.org</a>
-            <a href="https://wa.me/255758422663" class="contact-item" style="color:#25D366;">WhatsApp: +255 758 422 663</a>
-            <a href="tel:+255787319624" class="contact-item" style="color:#2d3748;">Office: +255 787 319 624</a>
+        <div class="pillar">
+            <h3 class="lang-en">I. Healthcare Navigation & Early Intervention</h3>
+            <h3 class="lang-sw">I. Usimamizi wa Afya na Tiba ya Mapema</h3>
+            <p class="lang-en">We connect children with speech therapists, physical therapists, and cardiologists. Early intervention is the key to independent living.</p>
+            <p class="lang-sw">Tunawaunganisha watoto na wataalamu wa lugha, mazoezi ya viungo, na madaktari wa moyo. Tiba ya mapema ndiyo siri ya maisha ya kujitegemea baadaye.</p>
+        </div>
+
+        <div class="pillar">
+            <h3 class="lang-en">II. Inclusive Education Advocacy</h3>
+            <h3 class="lang-sw">II. Utetezi wa Elimu Jumuishi</h3>
+            <p class="lang-en">We work with local primary and secondary schools in Shinyanga to ensure they have the training and resources to welcome students with Down Syndrome into regular classrooms.</p>
+            <p class="lang-sw">Tunafanya kazi na shule za msingi na sekondari Shinyanga kuhakikisha zina mafunzo na vifaa vya kuwapokea wanafunzi wenye Down Syndrome kwenye madarasa ya kawaida.</p>
+        </div>
+
+        <div class="pillar">
+            <h3 class="lang-en">III. Family Socioeconomic Empowerment</h3>
+            <h3 class="lang-sw">III. Uwezeshaji wa Kiuchumi kwa Familia</h3>
+            <p class="lang-en">A strong child needs a strong family. We provide parents with micro-enterprise guidance and counseling to ensure a sustainable support system at home.</p>
+            <p class="lang-sw">Mtoto imara anahitaji familia imara. Tunawapa wazazi mwongozo wa ujasiriamali mdogo na ushauri ili kuleta utulivu wa kiuchumi nyumbani.</p>
         </div>
     </div>
 
-    <footer>
-        &copy; 2026 FRAID DOWNSYNDROME FOUNDATION<br>
-        Kahama District, Shinyanga Region, Tanzania
-    </footer>
-</div>
+    <div class="section" style="background: #fffdf5; border: 2px solid #ffc107;">
+        <h2 class="lang-en">2026 Impact Targets</h2>
+        <h2 class="lang-sw">Malengo ya Matokeo 2026</h2>
+        <div class="stats-grid">
+            <div class="stat-item"><span class="stat-num">50+</span><span class="lang-en">Children Enrolled</span><span class="lang-sw">Watoto Waliosajiliwa</span></div>
+            <div class="stat-item"><span class="stat-num">12</span><span class="lang-en">Partner Schools</span><span class="lang-sw">Shule Washirika</span></div>
+            <div class="stat-item"><span class="stat-num">10k</span><span class="lang-en">People Reached</span><span class="lang-sw">Watu Waliofikiwa</span></div>
+            <div class="stat-item"><span class="stat-num">1</span><span class="lang-en">Resource Center</span><span class="lang-sw">Kituo cha Taarifa</span></div>
+        </div>
+    </div>
 
-<script>
-    function showLang(lang) {
-        const enElems = document.querySelectorAll('.lang-en');
-        const swElems = document.querySelectorAll('.lang-sw');
-        const btnEn = document.getElementById('btn-en');
-        const btnSw = document.getElementById('btn-sw');
-        
-        if (lang === 'sw') {
-            enElems.forEach(el => el.style.display = 'none');
-            swElems.forEach(el => el.style.display = 'inline-block');
-            btnSw.classList.add('active');
-            btnEn.classList.remove('active');
-        } else {
-            enElems.forEach(el => el.style.display = 'inline-block');
-            swElems.forEach(el => el.style.display = 'none');
-            btnEn.classList.add('active');
-            btnSw.classList.remove('active');
-        }
-    }
-</script>
-</body>
-</html>
+    <div class="section">
+        <h2 class="lang-en">The Leadership Team</h2>
+        <h2 class="lang-sw">Timu ya Uongozi</h2>
+        <div class="team-grid">
+            <div class="team-member"><strong>Frank Norasco Kayola</strong><span class="team-role">President & Founder</span></div>
+            <div class="team-member"><strong>Dr. Flora Ndullu</strong><span class="team-role">Programme Manager</span></div>
+            <div class="team-member"><strong>Aida Audax Lwamuhulu</strong><span class="team-role">Finance Manager</span></div>
+            <div class="team-member"><strong>John Andrew Maembe</strong><span class="team-role">Secretary General</span></div>
+            <div class="team-member"><strong>Mathias Peje</strong><span class="team-role">Field Coordinator</span></div>
+            <div class="team-member"><strong>Ngumiji Kazungu</strong><span class="team-role">Community Liaison</span></div>
+        </div>
+    </div>
+
+    <div class="cta-box">
+        <h2 style="color: white; border: none; text-align: center;" class="lang-en">Join Our Mission</h2>
+        <h2 style="color: white; border: none; text-align: center;" class="lang-sw">Ungana na Sisi</h2>
+        <p style="font-size: 1.3rem; margin-bottom: 40px;">
+            <span class="lang-en">We operate with 100% transparency. Whether you are an international donor, a medical professional, or a local volunteer, your support is valued
