@@ -3,63 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FRAID DOWNSYNDROME FOUNDATION</title>
+    <title>FRAID DOWNSYNDROME FOUNDATION | Official Site</title>
     <style>
-        :root { --primary: #004a99; --accent: #28a745; --bg: #f1f5f9; }
-        body { font-family: sans-serif; margin: 0; background: var(--bg); color: #1a202c; }
-        .container { max-width: 850px; margin: 0 auto; padding: 20px; }
+        :root {
+            --primary: #004a99;
+            --accent: #28a745;
+            --secondary: #ffc107;
+            --white: #ffffff;
+            --text-main: #1a202c;
+            --bg-gray: #f1f5f9;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0; padding: 0;
+            background-color: var(--bg-gray);
+            color: var(--text-main);
+        }
         
-        /* Language Switcher */
-        .lang-nav { background: #fff; padding: 10px; text-align: right; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 100; }
-        .lang-btn { background: var(--primary); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-left: 5px; }
+        /* Language Nav */
+        .lang-nav {
+            background: var(--white);
+            padding: 10px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .lang-btn {
+            background: #e2e8f0;
+            color: var(--text-main);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 0 5px;
+            transition: 0.3s;
+        }
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         
-        header { background: white; padding: 40px 20px; text-align: center; border-radius: 20px; margin-top: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .founder-img { width: 180px; height: 180px; object-fit: cover; border-radius: 20px; border: 4px solid var(--primary); }
-        
-        .section { background: white; padding: 25px; margin-top: 20px; border-radius: 20px; }
-        h2 { color: var(--primary); border-bottom: 3px solid var(--accent); display: inline-block; }
+        .hero { background: white; padding: 50px 20px; text-align: center; border-radius: 20px; margin-top: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .founder-img { width: 180px; height: 180px; object-fit: cover; border-radius: 20px; border: 5px solid var(--primary); margin-bottom: 15px; }
+        .hero h1 { font-size: 2rem; margin: 5px 0; color: var(--primary); }
+        .hero .title { font-weight: bold; color: var(--accent); text-transform: uppercase; font-size: 1rem; }
+
+        .section { background: white; padding: 30px; margin-top: 25px; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 20px; font-size: 1.4rem; text-transform: uppercase; }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-        .card { background: var(--bg); padding: 15px; border-radius: 10px; text-align: center; }
-        
-        .contact-btn { display: block; background: var(--primary); color: white; padding: 15px; margin: 10px 0; text-decoration: none; border-radius: 10px; text-align: center; font-weight: bold; }
-        
-        /* Hiding Swahili by default */
-        .lang-sw { display: none; }
+        .card { background: var(--bg-gray); padding: 15px; border-radius: 10px; text-align: center; }
+        .role { color: var(--accent); font-weight: bold; display: block; font-size: 0.8rem; text-transform: uppercase; }
+
+        .partner-box { background: linear-gradient(135deg, #004a99 0%, #002d5f 100%); color: white; padding: 40px; border-radius: 20px; text-align: center; margin-top: 25px; }
+        .contact-item { display: block; background: var(--white); color: var(--primary); padding: 15px; margin: 10px 0; text-decoration: none; border-radius: 10px; font-weight: bold; text-align: center; }
+
+        .lang-sw { display: none; } /* Swahili hidden by default */
+        footer { text-align: center; padding: 40px; color: #718096; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <div class="lang-nav">
-    <button class="lang-btn" onclick="showLang('en')">English</button>
-    <button class="lang-btn" onclick="showLang('sw')" style="background: var(--accent);">Kiswahili</button>
+    <button id="btn-en" class="lang-btn active" onclick="showLang('en')">English</button>
+    <button id="btn-sw" class="lang-btn" onclick="showLang('sw')">Kiswahili</button>
 </div>
 
 <div class="container">
-    <header>
+    
+    <header class="hero">
         <img src="IMG-20260430-WA0031.jpg" alt="Frank Norasco Kayola" class="founder-img">
         <h1>Frank Norasco Kayola</h1>
-        <p class="lang-en"><strong>Founder & President</strong></p>
-        <p class="lang-sw"><strong>Mwanzilishi na Rais</strong></p>
+        <div class="title">
+            <span class="lang-en">Founder & President</span>
+            <span class="lang-sw">Mwanzilishi na Rais</span>
+        </div>
+        <p style="margin-top: 15px; font-style: italic;">
+            <span class="lang-en">"Advocating for a world where every child with Down Syndrome is seen for their potential."</span>
+            <span class="lang-sw">"Tunapigania dunia ambapo kila mtoto mwenye Down Syndrome anaonekana kwa uwezo wake."</span>
+        </p>
     </header>
 
     <div class="section">
-        <h2 class="lang-en">Our Mission</h2>
-        <h2 class="lang-sw">Malengo Yetu</h2>
-        <p class="lang-en">Supporting children with Down Syndrome in Kahama through healthcare, education, and advocacy.</p>
-        <p class="lang-sw">Kusaidia watoto wenye Down Syndrome mkoani Kahama kupitia huduma za afya, elimu, na utetezi wa haki zao.</p>
+        <h2 class="lang-en">Who We Are</h2>
+        <h2 class="lang-sw">Sisi ni Nani</h2>
+        <p class="lang-en">FRAID DOWNSYNDROME FOUNDATION is based in Kahama, Tanzania. We provide a support system for families navigating Down Syndrome through medical access and advocacy.</p>
+        <p class="lang-sw">FRAID DOWNSYNDROME FOUNDATION ni taasisi iliyopo Kahama, Tanzania. Tunatoa mfumo wa msaada kwa familia zenye watoto wa Down Syndrome kupitia huduma za afya na utetezi wa haki zao.</p>
     </div>
 
     <div class="section">
-        <h2 class="lang-en">2026 Goals</h2>
-        <h2 class="lang-sw">Mipango ya 2026</h2>
+        <h2 class="lang-en">2026 Strategic Goals</h2>
+        <h2 class="lang-sw">Mipango Yetu 2026</h2>
         <ul class="lang-en">
             <li>Register 50+ children for specialized therapy.</li>
-            <li>Reach 10,000 people through awareness campaigns.</li>
+            <li>Partner with 5 local schools for inclusive learning.</li>
+            <li>Reach 10,000+ people through awareness campaigns.</li>
         </ul>
         <ul class="lang-sw">
             <li>Kusajili watoto 50+ kwa ajili ya tiba maalum.</li>
-            <li>Kufikia watu 10,000 kupitia kampeni za uelewa.</li>
+            <li>Kushirikiana na shule 5 za mtaani kwa ajili ya elimu jumuishi.</li>
+            <li>Kufikia watu 10,000+ kupitia kampeni za uelewa jamii.</li>
         </ul>
     </div>
 
@@ -67,33 +117,46 @@
         <h2 class="lang-en">Leadership</h2>
         <h2 class="lang-sw">Uongozi</h2>
         <div class="grid">
-            <div class="card"><strong>Frank Norasco Kayola</strong><br><small class="lang-en">Founder</small><small class="lang-sw">Mwanzilishi</small></div>
-            <div class="card"><strong>Dr. Flora Ndullu</strong><br><small>Manager</small></div>
+            <div class="card"><strong>Frank Norasco Kayola</strong><span class="role">President</span></div>
+            <div class="card"><strong>Dr. Flora Ndullu</strong><span class="role">Manager</span></div>
+            <div class="card"><strong>Aida Audax Lwamuhulu</strong><span class="role">Finance</span></div>
+            <div class="card"><strong>John Andrew Maembe</strong><span class="role">Secretary</span></div>
         </div>
     </div>
 
-    <div class="section">
-        <h2 class="lang-en">Contact Us</h2>
-        <h2 class="lang-sw">Wasiliana Nasi</h2>
-        <a href="mailto:frank.kayola@akhst.org" class="contact-btn">Email: frank.kayola@akhst.org</a>
-        <a href="https://wa.me/255758422663" class="contact-btn" style="background:#25D366;">WhatsApp</a>
+    <div class="partner-box">
+        <h2 style="color: white; border: none;" class="lang-en">Connect With Us</h2>
+        <h2 style="color: white; border: none;" class="lang-sw">Wasiliana Nasi</h2>
+        <a href="mailto:frank.kayola@akhst.org" class="contact-item">Email: frank.kayola@akhst.org</a>
+        <a href="https://wa.me/255758422663" class="contact-item" style="color:#25D366;">WhatsApp: +255 758 422 663</a>
+        <a href="tel:+255787319624" class="contact-item" style="color:#2d3748;">Call: +255 787 319 624</a>
     </div>
+
+    <footer>
+        &copy; 2026 FRAID DOWNSYNDROME FOUNDATION<br>
+        Kahama, Tanzania
+    </footer>
 </div>
 
 <script>
     function showLang(lang) {
         const enElems = document.querySelectorAll('.lang-en');
         const swElems = document.querySelectorAll('.lang-sw');
+        const btnEn = document.getElementById('btn-en');
+        const btnSw = document.getElementById('btn-sw');
         
         if (lang === 'sw') {
             enElems.forEach(el => el.style.display = 'none');
-            swElems.forEach(el => el.style.display = 'block');
+            swElems.forEach(el => el.style.display = 'inline-block');
+            btnSw.classList.add('active');
+            btnEn.classList.remove('active');
         } else {
-            enElems.forEach(el => el.style.display = 'block');
+            enElems.forEach(el => el.style.display = 'inline-block');
             swElems.forEach(el => el.style.display = 'none');
+            btnEn.classList.add('active');
+            btnSw.classList.remove('active');
         }
     }
 </script>
-
 </body>
 </html>
