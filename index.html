@@ -3,119 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fraid Foundation | Official Website</title>
+    <title>FRAID DOWNSYNDROME FOUNDATION | Official Site</title>
     <style>
-        /* Modern Charity Palette */
         :root {
-            --primary-blue: #004a99; /* Trust and Stability */
-            --accent-green: #28a745; /* Growth and Hope */
-            --soft-bg: #f8fafc;
-            --dark-text: #1e293b;
+            --primary: #004a99;
+            --accent: #28a745;
+            --bg-light: #f8fafc;
             --white: #ffffff;
+            --text-dark: #1e293b;
         }
-
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0; padding: 0; color: var(--dark-text); background: var(--soft-bg);
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            margin: 0; padding: 0; color: var(--text-dark); background: var(--bg-light);
             line-height: 1.6;
         }
-
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
         
-        /* Header Navigation */
-        nav { 
-            padding: 25px 0; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            border-bottom: 2px solid #e2e8f0;
-            background: var(--white);
-        }
-        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary-blue); text-transform: uppercase; letter-spacing: 1px; }
+        nav { padding: 25px 0; text-align: center; background: var(--white); border-bottom: 2px solid #eee; }
+        .logo { font-weight: 800; font-size: 1.3rem; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Hero Section */
         .hero { 
-            padding: 80px 0; 
-            text-align: center; 
+            padding: 60px 0; text-align: center; 
             background: linear-gradient(135deg, #004a99 0%, #007bff 100%); 
-            color: white;
-            border-radius: 0 0 50px 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            color: white; border-radius: 0 0 40px 40px;
         }
         .founder-img { 
-            width: 230px; height: 230px; 
-            object-fit: cover; 
-            border-radius: 30px; 
-            margin-bottom: 20px; 
-            border: 6px solid rgba(255,255,255,0.3);
-            transition: 0.3s;
+            width: 200px; height: 200px; object-fit: cover; border-radius: 25px; 
+            margin-bottom: 20px; border: 5px solid rgba(255,255,255,0.3);
         }
-        .hero h1 { font-size: 2.8rem; margin: 10px 0; letter-spacing: -1px; }
-        .hero p { font-size: 1.2rem; opacity: 0.9; font-style: italic; max-width: 700px; margin: 0 auto; }
+        .hero h1 { font-size: 2.2rem; margin: 10px 0; }
+        
+        section { padding: 50px 0; background: var(--white); margin-top: 20px; border-radius: 25px; }
+        h2 { font-size: 1.8rem; color: var(--primary); text-align: center; margin-bottom: 30px; }
+        h2::after { content: ''; display: block; width: 50px; height: 4px; background: var(--accent); margin: 10px auto 0; }
 
-        /* Section Styling */
-        section { padding: 80px 0; background: var(--white); margin-top: 20px; border-radius: 30px; }
-        h2 { font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 40px; text-align: center; }
-        h2::after { content: ''; display: block; width: 60px; height: 5px; background: var(--accent-green); margin: 15px auto 0; border-radius: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { padding: 30px; border-radius: 15px; background: var(--bg-light); border-left: 5px solid var(--primary); }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { padding: 40px; border-radius: 20px; background: var(--soft-bg); border-left: 6px solid var(--primary-blue); }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .member { background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #eee; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .role { color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; display: block; margin-top: 5px; }
 
-        /* Leadership Grid */
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        .member { 
-            background: var(--white); padding: 25px; border-radius: 20px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;
-            border-top: 4px solid var(--primary-blue);
-        }
-        .role { color: var(--accent-green); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; display: block; margin-top: 8px; }
+        .contact-card { background: #eef2ff; padding: 20px; border-radius: 15px; text-align: center; margin-bottom: 10px; }
+        .contact-card a { color: var(--primary); text-decoration: none; font-weight: bold; }
 
-        /* Contact Items */
-        .contact-card { 
-            background: #eef2ff; padding: 25px; border-radius: 20px; text-align: center;
-            transition: 0.3s;
-        }
-        .contact-card:hover { background: #e0e7ff; }
-        .contact-card a { color: var(--primary-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+        .cta-box { background: var(--accent); color: white; padding: 50px 20px; border-radius: 25px; text-align: center; margin: 40px 0; }
+        .btn { background: white; color: var(--accent); padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; }
 
-        /* Call to Action */
-        .cta-section { 
-            background: var(--accent-green); color: white; padding: 60px 20px; 
-            border-radius: 30px; text-align: center; margin: 40px 0;
-        }
-        .btn { 
-            background: var(--white); color: var(--accent-green); 
-            padding: 18px 45px; border-radius: 50px; 
-            text-decoration: none; font-weight: 800; display: inline-block; 
-            margin-top: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        footer { text-align: center; padding: 60px; color: #64748b; font-size: 0.9rem; }
+        footer { text-align: center; padding: 40px; color: #64748b; font-size: 0.85rem; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <nav><div class="logo">Fraid Foundation</div></nav>
-</div>
+<nav><div class="logo">FRAID DOWNSYNDROME FOUNDATION</div></nav>
 
 <header class="hero">
     <div class="container">
         <img src="IMG-20260430-WA0031.jpg" alt="Frank Norasco Kayola" class="founder-img">
         <h1>Frank Norasco Kayola</h1>
-        <p>"In every step we take, our goal is to be a light for those who have lost hope. We believe in the power of community and that we are all brothers and sisters."</p>
+        <p style="font-style: italic; opacity: 0.9;">"To be a light for those with Down Syndrome and their families. We are all brothers and sisters."</p>
     </div>
 </header>
 
 <section class="container">
     <div class="grid">
         <div class="card">
-            <h3 style="color:var(--primary-blue)">About Our Vision</h3>
-            <p>Based in Kahama, Tanzania, Fraid Foundation is a dedicated non-profit organization focused on uplifting marginalized communities through sustainable social programs and healthcare advocacy.</p>
+            <h3>About Us</h3>
+            <p>Based in Kahama, Tanzania, FRAID DOWNSYNDROME FOUNDATION is dedicated to supporting children and families affected by Down Syndrome through advocacy, education, and healthcare support.</p>
         </div>
         <div class="card">
-            <h3 style="color:var(--primary-blue)">Our Mission</h3>
-            <p>To provide essential resources and sustainable support to vulnerable children and families, fostering hope and self-reliance in our society.</p>
+            <h3>Our Mission</h3>
+            <p>To provide essential resources, reduce social stigma, and foster a supportive environment where every individual with Down Syndrome can thrive with dignity.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <h2>How We Work</h2>
+    <div class="grid">
+        <div style="padding: 10px;">
+            <p><strong>Community Outreach:</strong> We conduct field visits to identify families in need and provide direct assistance.</p>
+            <p><strong>Advocacy:</strong> We work to raise awareness in society to ensure children with Down Syndrome are treated with equality and respect.</p>
+        </div>
+        <div style="padding: 10px;">
+            <p><strong>Transparency:</strong> For our international partners, we provide comprehensive reports to ensure all resources directly impact the lives of our beneficiaries.</p>
         </div>
     </div>
 </section>
@@ -128,4 +99,31 @@
         <div class="member"><strong>Aida Audax Lwamuhulu</strong><span class="role">Finance Manager</span></div>
         <div class="member"><strong>John Andrew Maembe</strong><span class="role">Secretary General</span></div>
     </div>
-    <div style="margin
+    <div style="margin-top: 30px; text-align: center; color: #64748b;">
+        <strong>Community Volunteers:</strong><br>
+        Mathias Peje &bull; Ngumiji Kazungu
+    </div>
+</section>
+
+<section class="container">
+    <h2>Contact Information</h2>
+    <div class="grid">
+        <div class="contact-card">
+            <strong>Email</strong><br>
+            <a href="mailto:frank.kayola@akhst.org">frank.kayola@akhst.org</a>
+        </div>
+        <div class="contact-card">
+            <strong>WhatsApp</strong><br>
+            <a href="https://wa.me/255758422663">+255 758 422 663</a>
+        </div>
+        <div class="contact-card">
+            <strong>Call Us</strong><br>
+            <a href="tel:+255787319624">+255 787 319 624</a>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="cta-box">
+        <h2>Partner With Us</h2>
+        
