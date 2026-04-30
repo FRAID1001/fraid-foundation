@@ -3,118 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FRAID DOWNSYNDROME FOUNDATION</title>
+    <title>FRAID DOWNSYNDROME FOUNDATION | Official Site</title>
     <style>
         :root {
             --primary: #004a99;
             --accent: #28a745;
+            --secondary: #ffc107;
             --white: #ffffff;
             --text-main: #1a202c;
             --bg-gray: #f1f5f9;
         }
-        
         * { box-sizing: border-box; }
-
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             background-color: var(--bg-gray);
             color: var(--text-main);
-            overflow-y: auto; /* Inahakikisha scrolling inafanya kazi */
+            overflow-y: auto;
         }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        nav { background: var(--primary); color: white; padding: 20px; text-align: center; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+        
+        /* Hero Section */
+        .hero { background: white; padding: 50px 20px; text-align: center; border-radius: 20px; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .founder-img { width: 200px; height: 200px; object-fit: cover; border-radius: 20px; border: 5px solid var(--primary); margin-bottom: 15px; }
+        .hero h1 { font-size: 2.2rem; margin: 5px 0; color: var(--primary); }
+        .hero .title { font-weight: bold; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; font-size: 1.1rem; margin-bottom: 15px; }
 
-        .container { 
-            max-width: 800px; 
-            margin: 0 auto; 
-            padding: 20px; 
-        }
+        .section { background: white; padding: 35px; margin-top: 25px; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 25px; font-size: 1.5rem; text-transform: uppercase; }
+        
+        /* Core Values Grid */
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px; }
+        .value-card { background: #f8fafc; padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #e2e8f0; }
+        .value-card strong { color: var(--primary); display: block; margin-bottom: 5px; }
 
-        /* Header */
-        nav { 
-            background: var(--primary); 
-            color: white; 
-            padding: 20px; 
-            text-align: center;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+        /* Leadership Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .card { background: var(--bg-gray); padding: 15px; border-radius: 10px; text-align: center; }
+        .role { color: var(--accent); font-weight: bold; display: block; font-size: 0.8rem; text-transform: uppercase; }
 
-        /* Hero */
-        .hero {
-            background: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 20px;
-            margin-top: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
+        /* Future Goals List */
+        .goals-list { list-style: none; padding: 0; }
+        .goals-list li { margin-bottom: 12px; padding-left: 30px; position: relative; }
+        .goals-list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
 
-        .founder-img {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 20px;
-            border: 4px solid var(--primary);
-            margin-bottom: 15px;
-        }
+        /* Partner Box */
+        .partner-box { background: linear-gradient(135deg, #004a99 0%, #002d5f 100%); color: white; padding: 40px; border-radius: 20px; text-align: center; margin-top: 25px; }
+        .partner-box h2 { color: white; border-left: none; text-align: center; border-bottom: 2px solid var(--secondary); padding-bottom: 10px; }
 
-        /* Sections */
-        .section {
-            background: white;
-            padding: 30px;
-            margin-top: 20px;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
+        .contact-item { display: block; background: var(--white); color: var(--primary); padding: 15px; margin: 10px 0; text-decoration: none; border-radius: 10px; font-weight: bold; text-align: center; transition: 0.3s; border: 2px solid transparent; }
+        .contact-item:hover { background: transparent; color: white; border-color: white; }
 
-        h2 { 
-            color: var(--primary); 
-            border-bottom: 3px solid var(--accent);
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        /* Team Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .card {
-            background: var(--bg-gray);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .role {
-            color: var(--accent);
-            font-weight: bold;
-            display: block;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-        }
-
-        /* Contact Items */
-        .contact-item {
-            display: block;
-            background: var(--primary);
-            color: white;
-            padding: 15px;
-            margin: 10px 0;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #718096;
-            font-size: 0.8rem;
-        }
+        footer { text-align: center; padding: 50px 20px; color: #718096; font-size: 0.85rem; border-top: 1px solid #e2e8f0; margin-top: 40px; }
     </style>
 </head>
 <body>
@@ -126,44 +67,64 @@
     <header class="hero">
         <img src="IMG-20260430-WA0031.jpg" alt="Frank Norasco Kayola" class="founder-img">
         <h1>Frank Norasco Kayola</h1>
-        <p><em>"To be a light for those with Down Syndrome and their families."</em></p>
+        <div class="title">Founder & President</div>
+        <p style="margin-top: 20px; font-style: italic; color: #4a5568; max-width: 600px; margin-left: auto; margin-right: auto;">
+            "Advocating for a world where every child with Down Syndrome is seen for their potential, not their condition."
+        </p>
     </header>
 
     <div class="section">
-        <h2>About Our Mission</h2>
-        <p>Based in Kahama, Tanzania, we support children and families affected by Down Syndrome through advocacy, education, and healthcare support to ensure they thrive with dignity.</p>
+        <h2>Who We Are</h2>
+        <p>FRAID DOWNSYNDROME FOUNDATION is a non-governmental organization based in Kahama, Tanzania. We are dedicated to providing a voice for the voiceless and a support system for families navigating the journey of Down Syndrome. Our work focuses on medical access, social integration, and legal advocacy.</p>
     </div>
 
     <div class="section">
-        <h2>Leadership Team</h2>
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card"><strong>Integrity</strong>Transparent in every action.</div>
+            <div class="value-card"><strong>Compassion</strong>Love for all children.</div>
+            <div class="value-card"><strong>Equality</strong>Rights for everyone.</div>
+            <div class="value-card"><strong>Hope</strong>A better tomorrow.</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2026 Strategic Goals</h2>
+        <ul class="goals-list">
+            <li><strong>Medical Database:</strong> Creating a registry of 50+ children in Kahama to coordinate therapy.</li>
+            <li><strong>Resource Center:</strong> Establishing a physical point for family counseling and support groups.</li>
+            <li><strong>Education Partnership:</strong> Collaborating with 5 local schools for inclusive learning programs.</li>
+            <li><strong>Public Awareness:</strong> Reaching 10,000+ people through community radio and town-hall meetings.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Leadership & Governance</h2>
         <div class="grid">
             <div class="card"><strong>Frank Norasco Kayola</strong><span class="role">Founder & President</span></div>
             <div class="card"><strong>Dr. Flora Ndullu</strong><span class="role">Programme Manager</span></div>
             <div class="card"><strong>Aida Audax Lwamuhulu</strong><span class="role">Finance Manager</span></div>
             <div class="card"><strong>John Andrew Maembe</strong><span class="role">Secretary General</span></div>
         </div>
-        <p style="text-align:center; margin-top:15px; color:#666;">
-            <strong>Volunteers:</strong> Mathias Peje & Ngumiji Kazungu
+        <p style="text-align:center; margin-top:20px; color:#718096; font-size: 0.9rem;">
+            <strong>Field Support:</strong> Mathias Peje & Ngumiji Kazungu (Community Volunteers)
         </p>
     </div>
 
-    <div class="section">
-        <h2>How We Work</h2>
-        <p><strong>1. Community Outreach:</strong> Direct home visits to families.</p>
-        <p><strong>2. Advocacy:</strong> Raising public awareness in Kahama and beyond.</p>
-        <p><strong>3. Transparency:</strong> We provide full reports for all international collaborations.</p>
-    </div>
-
-    <div class="section">
-        <h2>Connect With Us</h2>
-        <a href="mailto:frank.kayola@akhst.org" class="contact-item">Email: frank.kayola@akhst.org</a>
-        <a href="https://wa.me/255758422663" class="contact-item" style="background:#25D366;">WhatsApp: +255 758 422 663</a>
-        <a href="tel:+255787319624" class="contact-item" style="background:#2d3748;">Call Office: +255 787 319 624</a>
+    <div class="partner-box">
+        <h2 style="color: white; border-left: none;">Global Collaboration</h2>
+        <p>We are actively seeking international donors, research partners, and specialized medical volunteers to join our mission in Tanzania.</p>
+        <div style="margin-top: 30px;">
+            <a href="mailto:frank.kayola@akhst.org" class="contact-item">Email: frank.kayola@akhst.org</a>
+            <a href="https://wa.me/255758422663" class="contact-item" style="color:#25D366;">WhatsApp Support: +255 758 422 663</a>
+            <a href="tel:+255787319624" class="contact-item" style="color:#2d3748;">Office Line: +255 787 319 624</a>
+        </div>
     </div>
 
     <footer>
         &copy; 2026 FRAID DOWNSYNDROME FOUNDATION<br>
-        Kahama, Shinyanga, Tanzania
+        Kahama, Shinyanga Region, Tanzania<br>
+        <em>"Together for a brighter future."</em>
     </footer>
 
 </div>
