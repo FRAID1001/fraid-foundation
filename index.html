@@ -1,84 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FRAID Down Syndrome Foundation</title>
-<style>
-body{font-family:Arial,sans-serif;margin:0;padding:0;line-height:1.6;color:#1f2937;background:#f5fff7}
-header{background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;padding:50px 20px;text-align:center}
-nav{background:#dcfce7;padding:12px;text-align:center;position:sticky;top:0}
-nav a{margin:0 12px;color:#14532d;text-decoration:none;font-weight:bold}
-.section{padding:35px 20px;max-width:960px;margin:auto}
-.card{background:#fff;padding:24px;border-radius:18px;margin:18px 0;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-footer{background:#14532d;color:#fff;text-align:center;padding:24px;margin-top:30px}
-.btn{display:inline-block;background:#16a34a;color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:bold}
-h1,h2{margin-top:0}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraid Foundation | Official Website</title>
+    <style>
+        /* Modern Charity Palette */
+        :root {
+            --primary-blue: #004a99; /* Trust and Stability */
+            --accent-green: #28a745; /* Growth and Hope */
+            --soft-bg: #f8fafc;
+            --dark-text: #1e293b;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0; padding: 0; color: var(--dark-text); background: var(--soft-bg);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header Navigation */
+        nav { 
+            padding: 25px 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            border-bottom: 2px solid #e2e8f0;
+            background: var(--white);
+        }
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary-blue); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Hero Section */
+        .hero { 
+            padding: 80px 0; 
+            text-align: center; 
+            background: linear-gradient(135deg, #004a99 0%, #007bff 100%); 
+            color: white;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .founder-img { 
+            width: 230px; height: 230px; 
+            object-fit: cover; 
+            border-radius: 30px; 
+            margin-bottom: 20px; 
+            border: 6px solid rgba(255,255,255,0.3);
+            transition: 0.3s;
+        }
+        .hero h1 { font-size: 2.8rem; margin: 10px 0; letter-spacing: -1px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; font-style: italic; max-width: 700px; margin: 0 auto; }
+
+        /* Section Styling */
+        section { padding: 80px 0; background: var(--white); margin-top: 20px; border-radius: 30px; }
+        h2 { font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 40px; text-align: center; }
+        h2::after { content: ''; display: block; width: 60px; height: 5px; background: var(--accent-green); margin: 15px auto 0; border-radius: 10px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { padding: 40px; border-radius: 20px; background: var(--soft-bg); border-left: 6px solid var(--primary-blue); }
+
+        /* Leadership Grid */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .member { 
+            background: var(--white); padding: 25px; border-radius: 20px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;
+            border-top: 4px solid var(--primary-blue);
+        }
+        .role { color: var(--accent-green); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; display: block; margin-top: 8px; }
+
+        /* Contact Items */
+        .contact-card { 
+            background: #eef2ff; padding: 25px; border-radius: 20px; text-align: center;
+            transition: 0.3s;
+        }
+        .contact-card:hover { background: #e0e7ff; }
+        .contact-card a { color: var(--primary-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+
+        /* Call to Action */
+        .cta-section { 
+            background: var(--accent-green); color: white; padding: 60px 20px; 
+            border-radius: 30px; text-align: center; margin: 40px 0;
+        }
+        .btn { 
+            background: var(--white); color: var(--accent-green); 
+            padding: 18px 45px; border-radius: 50px; 
+            text-decoration: none; font-weight: 800; display: inline-block; 
+            margin-top: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        footer { text-align: center; padding: 60px; color: #64748b; font-size: 0.9rem; }
+    </style>
 </head>
 <body>
 
-<header>
-<h1>FRAID Down Syndrome Foundation</h1>
-<p>Supporting children and families with love, care, and opportunity.</p>
+<div class="container">
+    <nav><div class="logo">Fraid Foundation</div></nav>
+</div>
+
+<header class="hero">
+    <div class="container">
+        <img src="IMG-20260430-WA0031.jpg" alt="Frank Norasco Kayola" class="founder-img">
+        <h1>Frank Norasco Kayola</h1>
+        <p>"In every step we take, our goal is to be a light for those who have lost hope. We believe in the power of community and that we are all brothers and sisters."</p>
+    </div>
 </header>
 
-<nav>
-<a href="#about">About</a>
-<a href="#mission">Mission</a>
-<a href="#project">Project</a>
-<a href="#leadership">Leadership</a>
-<a href="#contact">Contact</a>
-</nav>
-
-<section class="section" id="about">
-<div class="card">
-<h2>About Us</h2>
-<p>We are dedicated to improving the lives of children with Down Syndrome through awareness, education, advocacy, and community support in Tanzania.</p>
-</div>
+<section class="container">
+    <div class="grid">
+        <div class="card">
+            <h3 style="color:var(--primary-blue)">About Our Vision</h3>
+            <p>Based in Kahama, Tanzania, Fraid Foundation is a dedicated non-profit organization focused on uplifting marginalized communities through sustainable social programs and healthcare advocacy.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:var(--primary-blue)">Our Mission</h3>
+            <p>To provide essential resources and sustainable support to vulnerable children and families, fostering hope and self-reliance in our society.</p>
+        </div>
+    </div>
 </section>
 
-<section class="section" id="mission">
-<div class="card">
-<h2>Our Mission</h2>
-<p>To create an inclusive society where every child with Down Syndrome can thrive with dignity and equal opportunity.</p>
-</div>
-</section>
-
-<section class="section" id="project">
-<div class="card">
-<h2>Project Overview</h2>
-<p>FRAID Down Syndrome Foundation is a community-based initiative in Kahama District, Tanzania.</p>
-<p>We support <strong>150 children and families</strong> through healthcare, transport, medicines, awareness, training, and inclusion programs.</p>
-</div>
-</section>
-
-<section class="section" id="leadership">
-<div class="card">
-<h2>Leadership / Board</h2>
-<ul>
-<li>Frank Norasco Kayola – Founder & Executive Director</li>
-<li>Dr. Flora Ndullu – Chairperson</li>
-<li>John Andrew Maembe – Secretary</li>
-<li>Aida Audax Lwamuhulu – Treasurer</li>
-<li>Mathias Peje – Member</li>
-<li>Ngumiji Kazungu – Member</li>
-</ul>
-</div>
-</section>
-
-<section class="section" id="contact">
-<div class="card">
-<h2>Contact</h2>
-<p>Phone: +255758422663 / +255787319624</p>
-<p>Email: frank.kayola@akhst.org</p>
-<p>Location: Kahama, Shinyanga, Tanzania</p>
-</div>
-</section>
-
-<footer>
-© 2026 FRAID Down Syndrome Foundation
-</footer>
-
-</body>
-</html>
+<section class="container">
+    <h2>Leadership Team</h2>
+    <div class="team-grid">
+        <div class="member"><strong>Frank Norasco Kayola</strong><span class="role">Founder & President</span></div>
+        <div class="member"><strong>Dr. Flora Ndullu</strong><span class="role">Programme Manager</span></div>
+        <div class="member"><strong>Aida Audax Lwamuhulu</strong><span class="role">Finance Manager</span></div>
+        <div class="member"><strong>John Andrew Maembe</strong><span class="role">Secretary General</span></div>
+    </div>
+    <div style="margin
